@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAK NETWORK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #ffffff;
+            --subtext-color: #a6a6a6;
+            --border-color: #222222;
+            --font-serif: 'Lora', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        h1.main-title {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--subtext-color);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 15px;
+            color: var(--subtext-color);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* --- BOTÕES --- */
+        .links-list {
+            border-top: 1px solid var(--border-color);
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 25px 15px;
+            border-bottom: 1px solid var(--border-color);
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .link-item:hover {
+            background: #111;
+        }
+
+        .icon-box {
+            width: 35px;
+            height: 35px;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            border-radius: 4px;
+        }
+
+        /* Estilização para ícones Font Awesome */
+        .fa-solid, .fa-brands {
+            font-size: 20px;
+            color: #d1d1d1;
+        }
+
+        .text-box {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .text-box h2 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .text-box p {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--subtext-color);
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .arrow {
+            font-size: 18px;
+            color: var(--subtext-color);
+            opacity: 0.5;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: #444;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1 class="main-title">BRAK</h1>
+        <p class="subtitle">Ecossistemas Digitais • Tecnologia • Crescimento</p>
+        
+        <p class="quote">
+            "Construindo ecossistemas digitais, conectando pessoas, tecnologia e estratégias para acelerar negócios na internet."
+        </p>
+
+        <div class="links-list">
+            <a href="https://samuelllks.github.io/Samuel-Mendes/" target="_blank" class="link-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="text-box">
+                    <h2>Samuel Mendes</h2>
+                    <p>Co-fundador</p>
+                </div>
+                <span class="arrow">↗</span>
+            </a>
+
+            <a href="https://sonbra0707.github.io/Profile/" target="_blank" class="link-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="text-box">
+                    <h2>Sonbra0707</h2>
+                    <p>Co-fundador</p>
+                </div>
+                <span class="arrow">↗</span>
+            </a>
+
+            <a href="https://chat.whatsapp.com/LBvpqFzXOsxJQJBK3cvySF?mode=gi_t" target="_blank" class="link-item">
+                <div class="icon-box">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="text-box">
+                    <h2>Grupo de WhatsApp</h2>
+                    <p>Acesse nossa comunidade</p>
+                </div>
+                <span class="arrow">↗</span>
+            </a>
+
+            <a href="https://discord.gg/cgfYKabgM" target="_blank" class="link-item">
+                <div class="icon-box">
+                    <i class="fa-brands fa-discord"></i>
+                </div>
+                <div class="text-box">
+                    <h2>Grupo Discord</h2>
+                    <p>Junte-se ao servidor</p>
+                </div>
+                <span class="arrow">↗</span>
+            </a>
+        </div>
+
+        <footer>
+            © 2026 Brak Network. Todos os direitos reservados.
+        </footer>
+    </div>
+
+</body>
+</html>
