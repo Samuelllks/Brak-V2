@@ -3,192 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRAK NETWORK</title>
+    <title>BRAK NETWORK | Hub de Alta Performance</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
-            --subtext-color: #a6a6a6;
-            --border-color: #222222;
-            --font-serif: 'Lora', serif;
-            --font-sans: 'Inter', sans-serif;
+            --primary: #00ff88;
+            --bg: #020202;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --font-display: 'Syncopate', sans-serif;
+            --font-main: 'Plus Jakarta Sans', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg); color: #fff; font-family: var(--font-main); overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-sans);
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 60px 20px;
+        /* Background Animado */
+        .aura {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, rgba(0, 255, 136, 0.15), transparent 70%);
+            z-index: -1;
         }
 
-        .container {
-            width: 100%;
-            max-width: 450px;
-            text-align: center;
-        }
+        .container { max-width: 600px; margin: 0 auto; padding: 80px 20px; }
 
-        h1.main-title {
-            font-family: var(--font-serif);
-            font-size: 42px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
+        /* Header */
+        header { text-align: center; margin-bottom: 60px; }
+        .main-logo { font-family: var(--font-display); font-size: 3.5rem; letter-spacing: 12px; font-weight: 700; background: linear-gradient(180deg, #fff, #444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { font-size: 11px; letter-spacing: 4px; color: var(--primary); text-transform: uppercase; margin-top: 15px; font-weight: 800; }
 
-        .subtitle {
-            font-size: 10px;
-            letter-spacing: 3px;
-            color: var(--subtext-color);
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
+        /* Seção: O que fazemos */
+        .topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 40px; }
+        .topic-card { background: var(--glass); border: 1px solid var(--border); padding: 20px; border-radius: 20px; backdrop-filter: blur(10px); transition: 0.3s; }
+        .topic-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .topic-card i { color: var(--primary); margin-bottom: 10px; display: block; font-size: 1.2rem; }
+        .topic-card h4 { font-size: 14px; margin-bottom: 5px; font-family: var(--font-display); font-size: 10px; }
+        .topic-card p { font-size: 11px; color: #888; line-height: 1.4; }
 
-        .quote {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 15px;
-            color: var(--subtext-color);
-            line-height: 1.6;
-            margin-bottom: 40px;
+        /* Seção: Mentoria */
+        .highlight-box { 
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0,0,0,0));
+            border: 1px solid var(--primary); padding: 30px; border-radius: 24px; margin-bottom: 50px; position: relative; overflow: hidden;
         }
+        .highlight-box::before { content: "LIVE"; position: absolute; top: 15px; right: -30px; background: var(--primary); color: #000; padding: 5px 40px; transform: rotate(45deg); font-size: 10px; font-weight: 900; }
+        .highlight-box h3 { font-family: var(--font-display); font-size: 14px; margin-bottom: 10px; color: var(--primary); }
+        .highlight-box p { font-size: 14px; color: #ccc; }
 
-        /* --- BOTÕES --- */
-        .links-list {
-            border-top: 1px solid var(--border-color);
+        /* Links */
+        .section-title { font-size: 10px; letter-spacing: 3px; color: #444; text-transform: uppercase; margin-bottom: 20px; display: block; font-weight: 800; }
+        .links-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+        .link-item { 
+            display: flex; align-items: center; padding: 22px; background: var(--glass); border: 1px solid var(--border); border-radius: 20px; text-decoration: none; color: #fff; transition: 0.4s;
         }
+        .link-item:hover { background: rgba(255,255,255,0.08); border-color: var(--primary); padding-left: 30px; }
+        .icon-circle { width: 48px; height: 48px; background: #000; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 18px; border: 1px solid var(--border); font-size: 18px; color: var(--primary); }
+        .link-text h2 { font-size: 16px; font-weight: 700; }
+        .link-text p { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
 
-        .link-item {
-            display: flex;
-            align-items: center;
-            padding: 25px 15px;
-            border-bottom: 1px solid var(--border-color);
-            text-decoration: none;
-            color: white;
-            transition: background 0.3s;
-        }
+        /* Footer */
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); }
+        .footer-info { font-size: 9px; letter-spacing: 3px; color: #333; text-transform: uppercase; }
 
-        .link-item:hover {
-            background: #111;
-        }
-
-        .icon-box {
-            width: 35px;
-            height: 35px;
-            margin-right: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            border-radius: 4px;
-        }
-
-        /* Estilização para ícones Font Awesome */
-        .fa-solid, .fa-brands {
-            font-size: 20px;
-            color: #d1d1d1;
-        }
-
-        .text-box {
-            flex-grow: 1;
-            text-align: left;
-        }
-
-        .text-box h2 {
-            font-family: var(--font-serif);
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        .text-box p {
-            font-size: 10px;
-            text-transform: uppercase;
-            color: var(--subtext-color);
-            letter-spacing: 1px;
-            margin-top: 4px;
-        }
-
-        .arrow {
-            font-size: 18px;
-            color: var(--subtext-color);
-            opacity: 0.5;
-        }
-
-        footer {
-            margin-top: 60px;
-            font-size: 9px;
-            letter-spacing: 2px;
-            color: #444;
-            text-transform: uppercase;
-        }
+        /* Animações */
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: slideUp 0.8s ease forwards; }
     </style>
 </head>
 <body>
 
+    <div class="aura"></div>
+
     <div class="container">
         
-        <h1 class="main-title">BRAK</h1>
-        <p class="subtitle">Ecossistemas Digitais • Tecnologia • Crescimento</p>
-        
-        <p class="quote">
-            "Construindo ecossistemas digitais, conectando pessoas, tecnologia e estratégias para acelerar negócios na internet."
-        </p>
+        <header class="animate" style="animation-delay: 0.1s;">
+            <h1 class="main-logo">BRAK</h1>
+            <p class="tagline">Ecossistema de Performance Digital</p>
+        </header>
 
-        <div class="links-list">
+        <div class="topics-grid animate" style="animation-delay: 0.2s;">
+            <div class="topic-card">
+                <i class="fa-solid fa-microchip"></i>
+                <h4>Tecnologia</h4>
+                <p>Otimização de sistemas e automação para máxima eficiência.</p>
+            </div>
+            <div class="topic-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h4>Vendas Online</h4>
+                <p>Estratégias de escala e conversão no mercado digital.</p>
+            </div>
+            <div class="topic-card">
+                <i class="fa-solid fa-house-laptop"></i>
+                <h4>Home Office</h4>
+                <p>Cultura de trabalho remoto e liberdade geográfica total.</p>
+            </div>
+            <div class="topic-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h4>Networking</h4>
+                <p>Conexão direta com players que faturam alto no digital.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box animate" style="animation-delay: 0.3s;">
+            <h3>Mentorias Gratuitas</h3>
+            <p>Todo sábado, às 10h, realizamos calls exclusivas de networking e estratégia para membros da comunidade.</p>
+        </div>
+
+        <span class="section-title">Comando Geral</span>
+        <div class="links-list animate" style="animation-delay: 0.4s;">
             <a href="https://samuelllks.github.io/Samuel-Mendes/" target="_blank" class="link-item">
-                <div class="icon-box">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="text-box">
+                <div class="icon-circle"><i class="fa-solid fa-user"></i></div>
+                <div class="link-text">
                     <h2>Samuel Mendes</h2>
                     <p>Co-fundador</p>
                 </div>
-                <span class="arrow">↗</span>
             </a>
 
             <a href="https://sonbra0707.github.io/Profile/" target="_blank" class="link-item">
-                <div class="icon-box">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="text-box">
+                <div class="icon-circle"><i class="fa-solid fa-user"></i></div>
+                <div class="link-text">
                     <h2>Sonbra0707</h2>
                     <p>Co-fundador</p>
                 </div>
-                <span class="arrow">↗</span>
-            </a>
-
-            <a href="https://chat.whatsapp.com/LBvpqFzXOsxJQJBK3cvySF?mode=gi_t" target="_blank" class="link-item">
-                <div class="icon-box">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </div>
-                <div class="text-box">
-                    <h2>Grupo de WhatsApp</h2>
-                    <p>Acesse nossa comunidade</p>
-                </div>
-                <span class="arrow">↗</span>
-            </a>
-
-            <a href="https://discord.gg/cgfYKabgM" target="_blank" class="link-item">
-                <div class="icon-box">
-                    <i class="fa-brands fa-discord"></i>
-                </div>
-                <div class="text-box">
-                    <h2>Grupo Discord</h2>
-                    <p>Junte-se ao servidor</p>
-                </div>
-                <span class="arrow">↗</span>
             </a>
         </div>
 
-        <footer>
-            © 2026 Brak Network. Todos os direitos reservados.
+        <span class="section-title">Acessos Diretos</span>
+        <div class="links-list animate" style="animation-delay: 0.5s;">
+            <a href="https://chat.whatsapp.com/LBvpqFzXOsxJQJBK3cvySF" target="_blank" class="link-item">
+                <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="link-text">
+                    <h2>Grupo de WhatsApp</h2>
+                    <p>Networking & Estratégia</p>
+                </div>
+            </a>
+
+            <a href="https://discord.gg/cgfYKabgM" target="_blank" class="link-item">
+                <div class="icon-circle"><i class="fa-brands fa-discord"></i></div>
+                <div class="link-text">
+                    <h2>Grupo Discord</h2>
+                    <p>Infraestrutura da Comunidade</p>
+                </div>
+            </a>
+        </div>
+
+        <footer class="animate" style="animation-delay: 0.6s;">
+            <p class="footer-info">© 2026 BRAK NETWORK • TECNOLOGIA E VENDAS • HOME OFFICE</p>
         </footer>
+
     </div>
 
 </body>
